@@ -16,6 +16,7 @@
             background: #0f0f23;
             color: #fff;
             min-height: 100vh;
+            line-height: 1.6;
         }
         
         .container {
@@ -26,11 +27,11 @@
         
         header {
             text-align: center;
-            padding: 3rem 0;
+            padding: 2rem 0;
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -39,66 +40,33 @@
         
         .tagline {
             color: #888;
-            font-size: 1.2rem;
-        }
-        
-        .status-bar {
-            background: #1a1a2e;
-            border-radius: 12px;
-            padding: 1rem 2rem;
-            margin: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #10b981;
-            animation: pulse 2s infinite;
-        }
-        
-        .status-dot.disconnected {
-            background: #ef4444;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            font-size: 1.1rem;
         }
         
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
             margin: 2rem 0;
         }
         
         .metric-card {
             background: #1a1a2e;
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 1.5rem;
             border: 1px solid #2d2d44;
         }
         
         .metric-card h3 {
             color: #888;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 0.5rem;
         }
         
         .metric-value {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: #fff;
         }
@@ -107,28 +75,97 @@
             color: #10b981;
         }
         
-        .metric-subtitle {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
+        .metric-value.warning {
+            color: #f59e0b;
         }
         
-        .pricing-table {
+        .metric-value.danger {
+            color: #ef4444;
+        }
+        
+        .add-entry-form {
             background: #1a1a2e;
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 2rem;
             margin: 2rem 0;
             border: 1px solid #2d2d44;
         }
         
-        .pricing-table h2 {
-            margin-bottom: 1rem;
+        .add-entry-form h2 {
+            margin-bottom: 1.5rem;
             color: #fff;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #2d2d44;
+            background: #0f0f23;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button.secondary {
+            background: #2d2d44;
+            margin-left: 0.5rem;
+        }
+        
+        .entries-section {
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #2d2d44;
+        }
+        
+        .entries-section h2 {
+            margin-bottom: 1rem;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 0.9rem;
         }
         
         th, td {
@@ -142,55 +179,22 @@
             font-weight: 500;
         }
         
-        .cta-section {
-            text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
-            border-radius: 24px;
-            margin: 3rem 0;
+        .delete-btn {
+            background: #ef4444;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
         }
         
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-section p {
-            color: #888;
-            margin-bottom: 2rem;
-        }
-        
-        .email-form {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .email-form input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
+        .pricing-table {
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
             border: 1px solid #2d2d44;
-            background: #0f0f23;
-            color: #fff;
-            font-size: 1rem;
         }
         
-        .email-form button {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            border: none;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        
-        .email-form button:hover {
-            transform: translateY(-2px);
+        .pricing-table h2 {
+            margin-bottom: 1rem;
         }
         
         footer {
@@ -198,54 +202,108 @@
             padding: 2rem 0;
             color: #666;
         }
+        
+        .budget-form {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .budget-form input {
+            width: 100px;
+            padding: 0.5rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>⚡ ClawMeter</h1>
-            <p class="tagline">Stop guessing your OpenClaw costs</p>
+            <p class="tagline">Track your OpenClaw API costs manually</p>
         </header>
-        
-        <div class="status-bar">
-            <div class="status-indicator">
-                <div class="status-dot" id="statusDot"></div>
-                <span id="statusText">Connecting to OpenClaw...</span>
-            </div>
-            <span id="uptime">--</span>
-        </div>
         
         <div class="metrics-grid">
             <div class="metric-card">
-                <h3>Today's Usage</h3>
-                <div class="metric-value" id="todayTokens">--</div>
-                <div class="metric-subtitle">tokens</div>
-            </div>
-            <div class="metric-card">
                 <h3>Today's Cost</h3>
-                <div class="metric-value cost" id="todayCost">--</div>
-                <div class="metric-subtitle">estimated</div>
+                <div class="metric-value cost" id="todayCost">$0.00</div>
             </div>
             <div class="metric-card">
                 <h3>This Week</h3>
-                <div class="metric-value" id="weekTokens">--</div>
-                <div class="metric-subtitle">tokens</div>
+                <div class="metric-value" id="weekCost">$0.00</div>
             </div>
             <div class="metric-card">
                 <h3>This Month</h3>
-                <div class="metric-value cost" id="monthCost">--</div>
-                <div class="metric-subtitle">estimated</div>
+                <div class="metric-value" id="monthCost">$0.00</div>
+            </div>
+            <div class="metric-card">
+                <h3>Budget Remaining</h3>
+                <div class="metric-value" id="remainingBudget">$100.00</div>
             </div>
         </div>
         
+        <div class="add-entry-form">
+            <h2>➕ Add Usage Entry</h2>
+            <form id="entryForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <select id="model" required>
+                            <option value="kimi-k2">Kimi K2.5</option>
+                            <option value="gpt-4o">GPT-4o</option>
+                            <option value="gpt-4o-mini">GPT-4o Mini</option>
+                            <option value="claude-3-5-sonnet">Claude 3.5 Sonnet</option>
+                            <option value="claude-3-opus">Claude 3 Opus</option>
+                            <option value="claude-3-haiku">Claude 3 Haiku</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTokens">Input Tokens</label>
+                        <input type="number" id="inputTokens" placeholder="e.g., 1000" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="outputTokens">Output Tokens</label>
+                        <input type="number" id="outputTokens" placeholder="e.g., 500" min="0" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="description">Description (optional)</label>
+                        <input type="text" id="description" placeholder="What did you use it for?">
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: flex-end;">
+                        <button type="submit">Add Entry</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="entries-section">
+            <h2>📊 Recent Entries</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Model</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Cost</th>
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="entriesTable">
+                </tbody>
+            </table>
+        </div>
+        
         <div class="pricing-table">
-            <h2>Model Pricing Reference</h2>
+            <h2>💰 Model Pricing (per 1K tokens)</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Model</th>
-                        <th>Input (per 1K)</th>
-                        <th>Output (per 1K)</th>
+                        <th>Input</th>
+                        <th>Output</th>
                     </tr>
                 </thead>
                 <tbody id="pricingTable">
@@ -253,63 +311,43 @@
             </table>
         </div>
         
-        <div class="cta-section">
-            <h2>Want budget alerts?</h2>
-            <p>Get notified when you're approaching your spending limit. Join the beta.</p>
-            <form class="email-form" onsubmit="handleSubmit(event)">
-                <input type="email" placeholder="your@email.com" required>
-                <button type="submit">Get Early Access</button>
-            </form>
-        </div>
-        
         <footer>
-            <p>Built for the OpenClaw community • Free and open source</p>
+            <p>Built for the OpenClaw community • Track your AI costs</p>
         </footer>
     </div>
     
     <script>
-        async function fetchData() {
-            try {
-                const response = await fetch('/api/status');
-                const data = await response.json();
-                
-                const statusDot = document.getElementById('statusDot');
-                const statusText = document.getElementById('statusText');
-                
-                if (data.connected) {
-                    statusDot.classList.remove('disconnected');
-                    statusText.textContent = 'Connected to OpenClaw';
-                } else {
-                    statusDot.classList.add('disconnected');
-                    statusText.textContent = data.message || 'Not connected';
-                }
-                
-                if (data.demo_data) {
-                    document.getElementById('todayTokens').textContent = data.demo_data.session_tokens.toLocaleString();
-                    document.getElementById('todayCost').textContent = '$' + data.demo_data.estimated_cost.toFixed(2);
-                    document.getElementById('uptime').textContent = data.demo_data.uptime;
-                }
-            } catch (error) {
-                console.error('Error fetching status:', error);
-            }
-        }
-        
         async function fetchCosts() {
             try {
                 const response = await fetch('/api/costs');
                 const data = await response.json();
                 
-                document.getElementById('weekTokens').textContent = data.this_week.tokens.toLocaleString();
-                document.getElementById('monthCost').textContent = '$' + data.this_month.cost.toFixed(2);
+                document.getElementById('todayCost').textContent = '$' + data.today.cost.toFixed(4);
+                document.getElementById('weekCost').textContent = '$' + data.this_week.cost.toFixed(4);
+                document.getElementById('monthCost').textContent = '$' + data.this_month.cost.toFixed(4);
+                
+                const remainingEl = document.getElementById('remainingBudget');
+                remainingEl.textContent = '$' + data.remaining.toFixed(2);
+                
+                // Color code remaining budget
+                remainingEl.className = 'metric-value';
+                if (data.remaining < 0) {
+                    remainingEl.classList.add('danger');
+                } else if (data.remaining < data.budget * 0.2) {
+                    remainingEl.classList.add('warning');
+                } else {
+                    remainingEl.classList.add('cost');
+                }
                 
                 // Populate pricing table
                 const tbody = document.getElementById('pricingTable');
-                for (const [model, pricing] of Object.entries(data.models)) {
+                tbody.innerHTML = '';
+                for (const [key, model] of Object.entries(data.models)) {
                     const row = tbody.insertRow();
                     row.innerHTML = `
-                        <td>${model}</td>
-                        <td>$${pricing.input.toFixed(4)}</td>
-                        <td>$${pricing.output.toFixed(4)}</td>
+                        <td>${model.name}</td>
+                        <td>$${model.input.toFixed(4)}</td>
+                        <td>$${model.output.toFixed(4)}</td>
                     `;
                 }
             } catch (error) {
@@ -317,19 +355,83 @@
             }
         }
         
-        function handleSubmit(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input').value;
-            alert('Thanks! We\'ll email you at ' + email + ' when beta access is ready.');
-            event.target.reset();
+        async function fetchEntries() {
+            try {
+                const response = await fetch('/api/entries');
+                const data = await response.json();
+                
+                const tbody = document.getElementById('entriesTable');
+                tbody.innerHTML = '';
+                
+                for (const entry of data.entries) {
+                    const row = tbody.insertRow();
+                    const date = new Date(entry.date).toLocaleDateString();
+                    row.innerHTML = `
+                        <td>${date}</td>
+                        <td>${entry.model}</td>
+                        <td>${entry.input_tokens?.toLocaleString() || 0}</td>
+                        <td>${entry.output_tokens?.toLocaleString() || 0}</td>
+                        <td>$${entry.cost?.toFixed(4) || '0.0000'}</td>
+                        <td>${entry.description || '-'}</td>
+                        <td><button class="delete-btn" onclick="deleteEntry(${entry.id})">Delete</button></td>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error fetching entries:', error);
+            }
         }
         
-        // Fetch data on load
-        fetchData();
+        document.getElementById('entryForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const entry = {
+                model: document.getElementById('model').value,
+                input_tokens: parseInt(document.getElementById('inputTokens').value) || 0,
+                output_tokens: parseInt(document.getElementById('outputTokens').value) || 0,
+                description: document.getElementById('description').value
+            };
+            
+            try {
+                await fetch('/api/entries', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(entry)
+                });
+                
+                // Clear form
+                document.getElementById('inputTokens').value = '';
+                document.getElementById('outputTokens').value = '';
+                document.getElementById('description').value = '';
+                
+                // Refresh data
+                fetchCosts();
+                fetchEntries();
+            } catch (error) {
+                console.error('Error adding entry:', error);
+            }
+        });
+        
+        async function deleteEntry(id) {
+            if (!confirm('Delete this entry?')) return;
+            
+            try {
+                await fetch(`/api/entry/${id}`, {method: 'DELETE'});
+                fetchCosts();
+                fetchEntries();
+            } catch (error) {
+                console.error('Error deleting entry:', error);
+            }
+        }
+        
+        // Load data on page load
         fetchCosts();
+        fetchEntries();
         
         // Refresh every 30 seconds
-        setInterval(fetchData, 30000);
+        setInterval(() => {
+            fetchCosts();
+            fetchEntries();
+        }, 30000);
     </script>
 </body>
 </html>
